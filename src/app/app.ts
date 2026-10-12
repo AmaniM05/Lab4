@@ -3,10 +3,8 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './app.html',
-  styleUrls: ['./app.css'],
-  imports: [RouterLink, RouterOutlet]
+  styleUrl: './app.css'
 })
-export class App {
-  title = 'book-store';
-}
+export class App {}

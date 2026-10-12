@@ -1,0 +1,23 @@
+<div class="container">
+  @if (user) {
+    <h1>Submitted Information</h1>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>First name</th><th>Last name</th><th>Phone</th><th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ user.firstName }}</td>
+          <td>{{ user.lastName }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  } @else {
+    <p>No data submitted yet.</p>
+  }
+  <a [routerLink]="['/form']">Back to form</a>
+</div>

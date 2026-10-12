@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>User Information</h1>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+      <label for="firstName">First name:</label>
+      <input type="text" class="form-control" id="firstName" formControlName="firstName">
+      @if (firstName.touched && firstName.errors?.['required']) {
+        <div class="alert alert-danger">First name is required.</div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="lastName">Last name:</label>
+      <input type="text" class="form-control" id="lastName" formControlName="lastName">
+      @if (lastName.touched && lastName.errors?.['required']) {
+        <div class="alert alert-danger">Last name is required.</div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="phone">Phone number:</label>
+      <input type="text" class="form-control" id="phone" formControlName="phone">
+      @if (phone.touched && phone.errors?.['pattern']) {
+        <div class="alert alert-danger">
+          Phone must be 10 digits, and the 1st and 4th digits cannot be 0.
+        </div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="email">Email:</label>
+      <input type="text" class="form-control" id="email" formControlName="email">
+      @if (email.touched && email.errors?.['email']) {
+        <div class="alert alert-danger">Please enter a valid email address.</div>
+      }
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
